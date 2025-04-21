@@ -52,28 +52,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // no repeated clicks on the same image
     if (imgElement.dataset.found) {
-      return; // already clicked, do nothing
+      return;
     }
 
     imgElement.dataset.found = 'true'; // mark image as clicked
-    animal.found += 1; // increment found 
+    animal.found += 1; // increment found cnt
 
     // Update found based on animal count
     updateAnimalMessage(animalKey);
   }
 
-  // Updating the messages clearly
+  // Updating the count message
   function updateAnimalMessage(animalKey) {
     const animal = animals[animalKey];
 
-    // Update count message 
     if (animal.found === 1) {
       animal.messageDiv.textContent = `1/${animal.total} have been found so far!`;
     } else {
       animal.messageDiv.textContent = `${animal.found} have been found so far!`;
     }
 
-    // Congratulations message if all found
+    // Congrats message if all found
     if (animal.found === animal.total) {
       const congrats = document.createElement('div');
       congrats.className = 'congrats-message';
