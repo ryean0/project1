@@ -82,15 +82,62 @@ header {
   pointer-events: auto; /* enables clicks on images */
 }
 
-/* actual footer is a form at bottom-right fixed position */
+/* clickable images container - positioned precisely */
+.interactive-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* container itself ignores mouse */
+}
+
+/* clickable animal images precisely positioned using viewport units */
+.interactive-area img {
+  position: absolute;
+  width: 120px; /* Adjust width as needed to match visual scale */
+  cursor: pointer;
+  pointer-events: auto; /* enable clicks */
+}
+/* animal images with relative positioning to vw/vh */
+
+#whale-img {
+  width: 300px; /* whale image larger */
+  top: 75vh;    /* approx 'top'% down from top edge and 'left'% from left */
+  left: 90vw;   
+}
+
+#turtle1-img {
+  top: 15vh;    
+  left: 10vw;   
+}
+
+#turtle2-img {
+  top: 20vh;    
+  left: 80vw;   
+}
+
+#jellyfish1-img {
+  top: 70vh;    
+  left: 10vw;    
+}
+
+#jellyfish2-img {
+  top: 50vh;    
+  left: 85vw;   
+}
+
+/* actual footer form centered at bottom */
 .form-footer {
   position: fixed; /* fixed to viewport */
-  bottom: 10px;
-  right: 10px;
+  bottom: 10px; 
+  left: 50%; /* center horizontally */
+  transform: translateX(-50%); /* adjust back by 50% of width to center */
   background: rgba(255,255,255,0.1);
   padding: 10px;
   border-radius: 8px;
   width: 320px;
+  text-align: center; /* center-align text inside the form */
 }
 
 .form-footer form {

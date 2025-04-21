@@ -1,4 +1,84 @@
-// Basic DOMContentLoaded event ensures page loads first
+// Wait for DOM content to load
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Website loaded successfully!');
+
+  // Animal Data
+  const animals = {
+    whale: {
+      found: 0,
+      total: 1,
+      messageDiv: null,
+      imageIds: ['whale-img']
+    },
+    turtle: {
+      found: 0,
+      total: 2,
+      messageDiv: null,
+      imageIds: ['turtle1-img', 'turtle2-img']
+    },
+    jellyfish: {
+      found: 0,
+      total: 2,
+      messageDiv: null,
+      imageIds: ['jellyfish1-img', 'jellyfish2-img']
+    }
+  };
+
+  // Setup initial "0 found" messages 
+  animals.whale.messageDiv = createMessageDiv('whale', animals.whale.found, animals.whale.total);
+  animals.turtle.messageDiv = createMessageDiv('turtle', animals.turtle.found, animals.turtle.total);
+  animals.jellyfish.messageDiv = createMessageDiv('jellyfish', animals.jellyfish.found, animals.jellyfish.total);
+
+  // Helper function to create and insert initial messages
+  function createMessageDiv(animal, found, total) {
+    const parent = document.querySelector(`#${animal}-emoji`).closest('.creature-col');
+    const div = document.createElement('div');
+    div.className = 'found-message';
+    div.textContent = `${found} have been found so far!`;
+    parent.appendChild(div);
+    return div;
+  }
+
+  // event listeners for animal images
+  for (const animalKey in animals) {
+    animals[animalKey].imageIds.forEach(imgId => {
+      const imgElement = document.getElementById(imgId);
+      imgElement.addEventListener('click', () => handleAnimalClick(animalKey, imgElement));
+    });
+  }
+
+  //Logic for handling clicks
+  function handleAnimalClick(animalKey, imgElement) {
+    const animal = animals[animalKey];
+
+    // Prevent repeated clicks on the same image
+    if (imgElement.dataset.found) {
+      return; // already clicked, do nothing
+    }
+
+    imgElement.dataset.found = 'true'; // mark image as clicked
+    animal.found += 1; // increment found 
+
+    // Update found based on animal count
+    updateAnimalMessage(animalKey);
+  }
+
+  // Updating the messages clearly
+  function updateAnimalMessage(animalKey) {
+    const animal = animals[animalKey];
+
+    // Update count message 
+    if (animal.found === 1) {
+      animal.messageDiv.textContent = `1 has been found so far!`;
+    } else {
+      animal.messageDiv.textContent = `${animal.found} have been found so far!`;
+    }
+
+    // Congratulations message if all found
+    if (animal.found === animal.total) {
+      const congrats = document.createElement('div');
+      congrats.className = 'congrats-message';
+      congrats.textContent = `🎉 Congratulations! You have found every one! 🎉`;
+      animal.messageDiv.parentElement.appendChild(congrats);
+    }
+  }
 });
