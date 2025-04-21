@@ -9,14 +9,18 @@
 html, body {
   height: 100vh;
   width: 100vw;
-  overflow: hidden; /* prevents scrolling */
-  font-family: Arial, sans-serif;
+  overflow: hidden;
+  font-family: 'Poppins', Arial, sans-serif;
   background: url('assets/desktop/dark-bg.png') no-repeat center center fixed;
-  background-size: cover;
+  background-size: cover; /* Always cover entire viewport */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   color: white;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  transition: background 0.5s ease; /* transition between dark/light */
 }
 
 /* header styling (takes minimal space at the top) */
@@ -24,6 +28,25 @@ header {
   text-align: center;
   flex: 0 1 auto;
   margin-bottom: 10px;
+}
+/* styles for dark mode switch */
+#mode-toggle {
+  position: fixed;
+  top: 5vh;
+  right: 8vw;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+#mode-toggle:hover {
+  transform: scale(1.1);
 }
 
 /* Main content area expands to available space */
@@ -40,21 +63,23 @@ header {
 
 /* Grid items styling */
 .creature-col {
-  background: rgba(0,0,0,0.3);
-  padding: 15px;
-  border-radius: 10px;
+  background: linear-gradient(to bottom right, rgba(0,0,50,0.6), rgba(0,0,80,0.3));
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
 }
 
-.creature-col h2 {
-  margin-bottom: 8px;
+.creature-col:hover {
+  transform: scale(1.02);
 }
 
-.creature-col ul {
-  list-style: none;
+.creature-col h2::before {
+  content: "✨ ";
 }
 
-.creature-col ul li {
-  margin-bottom: 6px;
+.creature-col ul li::before {
+  content: "👉 ";
 }
 
 /* footer text for grid view, not overall */
@@ -129,15 +154,17 @@ header {
 
 /* actual footer form centered at bottom */
 .form-footer {
-  position: fixed; /* fixed to viewport */
-  bottom: 10px; 
-  left: 50%; /* center horizontally */
-  transform: translateX(-50%); /* adjust back by 50% of width to center */
-  background: rgba(255,255,255,0.1);
-  padding: 10px;
-  border-radius: 8px;
-  width: 320px;
-  text-align: center; /* center-align text inside the form */
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px; /* larger padding */
+  border-radius: 12px;
+  width: 340px;
+  text-align: center;
+  backdrop-filter: blur(5px); /* optional frosted glass effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* add shadow */
 }
 
 .form-footer form {
@@ -147,19 +174,19 @@ header {
 .form-footer input[type="email"],
 .form-footer button {
   width: 100%;
-  padding: 6px;
-  margin-top: 5px;
-  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
   border: none;
 }
 
 .form-footer button {
   cursor: pointer;
-  background: rgba(255,255,255,0.2);
+  background: rgba(0, 123, 255, 0.5);
   color: white;
   transition: background 0.3s;
 }
 
 .form-footer button:hover {
-  background: rgba(255,255,255,0.4);
+  background: rgba(0, 123, 255, 0.7);
 }

@@ -81,4 +81,28 @@ document.addEventListener('DOMContentLoaded', () => {
       animal.messageDiv.parentElement.appendChild(congrats);
     }
   }
+
+  // Light/Dark mode
+  const modeToggle = document.getElementById('mode-toggle');
+
+  modeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+
+    if (isLight) {
+      // Switch to light mode
+      if (window.innerWidth <= 768) {
+        document.body.style.background = "url('assets/mobile/light-bg.png') no-repeat center center fixed";
+      } else {
+        document.body.style.background = "url('assets/desktop/light-bg.png') no-repeat center center fixed";
+      }
+    } else {
+      // Switch back to dark mode
+      if (window.innerWidth <= 768) {
+        document.body.style.background = "url('assets/mobile/dark-bg.png') no-repeat center center fixed";
+      } else {
+        document.body.style.background = "url('assets/desktop/dark-bg.png') no-repeat center center fixed";
+      }
+    }
+    document.body.style.backgroundSize = "cover";
+  });
 });
