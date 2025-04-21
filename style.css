@@ -165,7 +165,7 @@ header h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* container itself ignores mouse */
+  pointer-events: none; 
 }
 
 /* clickable animal images precisely positioned using viewport units */
@@ -201,6 +201,40 @@ header h1 {
 #jellyfish2-img {
   top: 50vh;    
   left: 85vw;   
+}
+
+/* mobile view (<=768px) image positions*/
+@media (max-width: 768px) {
+  
+  #whale-img {
+    width: 200px;
+    top: 75vh;
+    left: 40vw;
+  }
+
+  #turtle1-img {
+    width: 120px;
+    top: 85vh;
+    left: 15vw;
+  }
+
+  #turtle2-img {
+    width: 120px;
+    top: 90vh;
+    left: 75vw;
+  }
+
+  #jellyfish1-img {
+    width: 100px;
+    top: 9vh;
+    left: 80vw;
+  }
+
+  #jellyfish2-img {
+    width: 100px;
+    top: 55vh;
+    left: 20vw;
+  }
 }
 
 /* actual footer form centered at bottom */
@@ -241,4 +275,47 @@ header h1 {
 
 .form-footer button:hover {
   background: rgba(0, 123, 255, 0.7);
+}
+
+/* adjustments for mobile*/
+@media (max-width: 768px) {
+  
+  /* Creature grid becomes 1 column */
+  .creature-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+  }
+  header h1 {
+    font-size: 2.2rem;
+    padding: 10px;
+  }
+  .creature-name {
+    font-size: 1.5rem;
+  }
+  .creature-facts {
+    display: none;
+  }
+  .creature-description {
+    font-size: 0.95rem;
+  }
+  .creature-link {
+    font-size: 0.95rem;
+  }
+
+  /* Hide the subscribe form on mobile */
+  .form-footer {
+    display: none;
+  }
+  .grid-footer {
+    font-size: 0.3rem;
+    margin-top: 20px;
+  }
+  #mode-toggle {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    top: 3vh;
+    right: 5vw;
+  }
 }
