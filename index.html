@@ -14,31 +14,43 @@
   <!-- JavaScript file -->
   <script src="script.js" defer></script>
 </head>
+
 <body>
   <header>
     <h1>My Favorite Sea Creatures</h1>
   </header>
 
   <main>
-    <ol>
+
+    <!-- Interactive clickable sea creature images -->
+    <div class="interactive-area">
+      <img src="assets/animals/whale.png" id="whale-img" alt="Blue Whale">
+      <img src="assets/animals/turtle-1.png" id="turtle1-img" alt="Sea Turtle 1">
+      <img src="assets/animals/turtle-2.png" id="turtle2-img" alt="Sea Turtle 2">
+      <img src="assets/animals/jellyfish-1.png" id="jellyfish1-img" alt="Jellyfish 1">
+      <img src="assets/animals/jellyfish-2.png" id="jellyfish2-img" alt="Jellyfish 2">
+    </div>
+
+    <!-- Sea creatures info list -->
+    <ol id="creature-list">
       <li>
-        <h3>Blue Whale</h3>
+        <h3>Blue Whale <span id="whale-emoji"></span></h3>
         <ul>
           <li>There is 1! 🐋</li>
           <li><a href="https://en.wikipedia.org/wiki/Blue_whale" target="_blank">Find out more about Blue Whales here!</a></li>
         </ul>
       </li>
-    
+
       <li>
-        <h3>Sea Turtle</h3>
+        <h3>Sea Turtle <span id="turtle-emoji"></span></h3>
         <ul>
           <li>There are 2! 🐢🐢</li>
           <li><a href="https://en.wikipedia.org/wiki/Sea_turtle" target="_blank">Find out more about Sea Turtles here!</a></li>
         </ul>
       </li>
-    
+
       <li>
-        <h3>Ocean Jellyfish</h3>
+        <h3>Ocean Jellyfish <span id="jellyfish-emoji"></span></h3>
         <ul>
           <li>There are 2! 🪼🪼</li>
           <li><a href="https://en.wikipedia.org/wiki/Jellyfish" target="_blank">Find out more about Ocean Jellyfish here!</a></li>
@@ -46,10 +58,21 @@
       </li>
     </ol>
 
-  </main>
+    <!-- Basic form to satisfy form requirements -->
+    <form>
+      <fieldset>
+        <legend>Subscribe for more puzzles!</legend>
 
-  <footer>
-    <p>&copy; 2025 My Favorite Sea Creatures</p>
-  </footer>
-</body>
-</html>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <p>Would you like to receive future links for more puzzles like this?</p>
+
+        <input type="checkbox" id="yes" name="subscribe" value="yes">
+        <label for="yes">Yes, this is fun!</label><br>
+
+        <input type="checkbox" id="no" name="subscribe" value="no">
+        <label for="no">No, this is kinda lame.</label><br>
+
+        <button type="submit">Submit</button>
+      </
