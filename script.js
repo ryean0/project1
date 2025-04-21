@@ -105,4 +105,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.body.style.backgroundSize = "cover";
   });
+
+  adjustBackgroundForScreenSize();
+
+  window.addEventListener('resize', adjustBackgroundForScreenSize);
+  // Adjust background based on screen size + responsive design (only 2 selectors either desktop or mobile)
+
+  function adjustBackgroundForScreenSize() {
+    if (window.innerWidth <= 768) {
+      if (document.body.classList.contains('light-mode')) {
+        document.body.style.background = "url('assets/mobile/light-bg.png') no-repeat center center fixed";
+      } else {
+        document.body.style.background = "url('assets/mobile/dark-bg.png') no-repeat center center fixed";
+      }
+    } else {
+      if (document.body.classList.contains('light-mode')) {
+        document.body.style.background = "url('assets/desktop/light-bg.png') no-repeat center center fixed";
+      } else {
+        document.body.style.background = "url('assets/desktop/dark-bg.png') no-repeat center center fixed";
+      }
+    }
+
+    document.body.style.backgroundSize = "cover";
+  }
 });
