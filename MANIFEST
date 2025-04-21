@@ -1,14 +1,46 @@
-index.html
-style.css
-script.js
-favicon.ico
-assets/animals/whale.png
-assets/animals/turtle-1.png
-assets/animals/turtle-2.png
-assets/animals/jellyfish-1.png
-assets/animals/jellyfish-2.png
-assets/desktop/dark-bg.png
-assets/desktop/light-bg.png
-assets/mobile/dark-bg.png
-assets/mobile/light-bg.png
-MANIFEST
+ALL students complete this section:
+
+CHOICES
+-------
+9a. a (Applied text-shadow for depth on header and creature names)
+9b. b (Used responsive units like rem, vw, and clamp() for scaling font sizes)
+12. a,b,c (Used CSS gradients, box-shadows, and CSS transforms)
+18. b (Used CSS pseudo-elements ::before for text decoration, e.g., heading icons)
+19. a,b,c (CSS gradients, box-shadow for depth, and transforms on hover)
+
+JAVASCRIPT
+----------
+- Click on a sea creature image (whale, turtle, jellyfish) to mark it as found; 
+  - Page dynamically updates the "found" count below each creature and 
+  - Shows a congratulatory message when all of that creature type are found. 
+- Includes a Light/Dark Mode toggle button that changes background images dynamically based on 
+  - screen size (desktop/mobile)
+  - light/dark mode.
+
+NOTES TO STAFF
+---------------
+
+ONLY modify this section if you implemented the requirements across 2 or more files.
+Otherwise, submit this file as is. PLEASE do not delete anything from this file.
+
+REQUIREMENT LOCATION
+---------------------
+ 2.	index.html
+ 3.	style.css
+ 4.	index.html
+ 5.	index.html
+ 6.	index.html, style.css
+ 7.	index.html, style.css
+ 8.	style.css
+ 9.	style.css
+10.	script.js
+11.	index.html, style.css
+12.	style.css
+13.	style.css
+14.	style.css
+15.	style.css
+16.	style.css
+17.	index.html
+18.	style.css
+19.	style.css
+20.	index.html
