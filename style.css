@@ -1,0 +1,27 @@
+/* Reset margins and padding for basic cleanliness */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+header, main, footer {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+header {
+  background-color: #f0f0f0;
+}
+
+footer {
+  background-color: #f9f9f9;
+  text-align: center;
+  font-size: 0.8rem;
+}
