@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (animal.found === animal.total) {
       const congrats = document.createElement('div');
       congrats.className = 'congrats-message';
-      congrats.textContent = `🎉 Congrats! You found every ${animal}!`;
+      congrats.textContent = `🎉 Congrats! You found every ${animalKey}!`;
       animal.messageDiv.parentElement.appendChild(congrats);
     }
   }
