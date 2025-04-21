@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"> <!-- character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- responsive -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Favorite Sea Creatures</title>
 
   <!-- CSS stylesheet -->
@@ -20,45 +20,52 @@
     <h1>My Favorite Sea Creatures</h1>
   </header>
 
-  <main>
+  <!-- Main content structured into CSS Grid -->
+  <main class="creature-grid">
+    <!-- Column 1: Blue Whale -->
+    <section class="creature-col">
+      <h2>1. Blue Whale <span id="whale-emoji"></span></h2>
+      <ul>
+        <li>🐋 There is only 1!</li>
+        <li><a href="https://en.wikipedia.org/wiki/Blue_whale" target="_blank">Learn More →</a></li>
+      </ul>
+    </section>
 
-    <!-- Interactive clickable sea creature images -->
-    <div class="interactive-area">
-      <img src="assets/animals/whale.png" id="whale-img" alt="Blue Whale">
-      <img src="assets/animals/turtle-1.png" id="turtle1-img" alt="Sea Turtle 1">
-      <img src="assets/animals/turtle-2.png" id="turtle2-img" alt="Sea Turtle 2">
-      <img src="assets/animals/jellyfish-1.png" id="jellyfish1-img" alt="Jellyfish 1">
-      <img src="assets/animals/jellyfish-2.png" id="jellyfish2-img" alt="Jellyfish 2">
-    </div>
+    <!-- Column 2: Sea Turtles -->
+    <section class="creature-col">
+      <h2>2. Sea Turtles <span id="turtle-emoji"></span></h2>
+      <ul>
+        <li>🐢🐢 There are 2!</li>
+        <li><a href="https://en.wikipedia.org/wiki/Sea_turtle" target="_blank">Learn More →</a></li>
+      </ul>
+    </section>
 
-    <!-- Sea creatures info list -->
-    <ol id="creature-list">
-      <li>
-        <h3>Blue Whale <span id="whale-emoji"></span></h3>
-        <ul>
-          <li>There is 1! 🐋</li>
-          <li><a href="https://en.wikipedia.org/wiki/Blue_whale" target="_blank">Find out more about Blue Whales here!</a></li>
-        </ul>
-      </li>
+    <!-- Column 3: Ocean Jellyfish -->
+    <section class="creature-col">
+      <h2>3. Ocean Jellyfish <span id="jellyfish-emoji"></span></h2>
+      <ul>
+        <li>🪼🪼 There are 2!</li>
+        <li><a href="https://en.wikipedia.org/wiki/Jellyfish" target="_blank">Learn More →</a></li>
+      </ul>
+    </section>
 
-      <li>
-        <h3>Sea Turtle <span id="turtle-emoji"></span></h3>
-        <ul>
-          <li>There are 2! 🐢🐢</li>
-          <li><a href="https://en.wikipedia.org/wiki/Sea_turtle" target="_blank">Find out more about Sea Turtles here!</a></li>
-        </ul>
-      </li>
+    <!-- Footer text spanning grid columns -->
+    <section class="grid-footer">
+      <p>See if you can spot them in this image!</p>
+    </section>
+  </main>
 
-      <li>
-        <h3>Ocean Jellyfish <span id="jellyfish-emoji"></span></h3>
-        <ul>
-          <li>There are 2! 🪼🪼</li>
-          <li><a href="https://en.wikipedia.org/wiki/Jellyfish" target="_blank">Find out more about Ocean Jellyfish here!</a></li>
-        </ul>
-      </li>
-    </ol>
+  <!-- Interactive clickable sea creature images (positions defined later) -->
+  <div class="interactive-area">
+    <img src="assets/animals/whale.png" id="whale-img" alt="Blue Whale">
+    <img src="assets/animals/turtle-1.png" id="turtle1-img" alt="Sea Turtle 1">
+    <img src="assets/animals/turtle-2.png" id="turtle2-img" alt="Sea Turtle 2">
+    <img src="assets/animals/jellyfish-1.png" id="jellyfish1-img" alt="Jellyfish 1">
+    <img src="assets/animals/jellyfish-2.png" id="jellyfish2-img" alt="Jellyfish 2">
+  </div>
 
-    <!-- Basic form to satisfy form requirements -->
+  <!-- Form at the bottom-right -->
+  <footer class="form-footer">
     <form>
       <fieldset>
         <legend>Subscribe for more puzzles!</legend>
@@ -66,7 +73,7 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <p>Would you like to receive future links for more puzzles like this?</p>
+        <p>Would you like to receive future links for more puzzles?</p>
 
         <input type="checkbox" id="yes" name="subscribe" value="yes">
         <label for="yes">Yes, this is fun!</label><br>
@@ -75,4 +82,8 @@
         <label for="no">No, this is kinda lame.</label><br>
 
         <button type="submit">Submit</button>
-      </
+      </fieldset>
+    </form>
+  </footer>
+</body>
+</html>

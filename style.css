@@ -5,39 +5,114 @@
   box-sizing: border-box;
 }
 
-body {
+/* Body set to viewport height, width - prevent screen overflow for 1-page static site */
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* prevents scrolling */
   font-family: Arial, sans-serif;
-  background-image: url('assets/desktop/dark-bg.png');
+  background: url('assets/desktop/dark-bg.png') no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  color: white; /* TODO assuming dark background */
+  color: white;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-header, main, footer {
-  margin-bottom: 15px;
+/* header styling (takes minimal space at the top) */
+header {
+  text-align: center;
+  flex: 0 1 auto;
+  margin-bottom: 10px;
 }
 
+/* Main content area expands to available space */
+.creature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 15px;
+  max-width: 1100px;
+  margin: auto; /* vertical and horizontal centering */
+  flex: 1 1 auto; /* takes remaining space */
+  padding: 10px;
+}
+
+/* Grid items styling */
+.creature-col {
+  background: rgba(0,0,0,0.3);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.creature-col h2 {
+  margin-bottom: 8px;
+}
+
+.creature-col ul {
+  list-style: none;
+}
+
+.creature-col ul li {
+  margin-bottom: 6px;
+}
+
+/* footer text for grid view, not overall */
+.grid-footer {
+  grid-column: 1 / span 3;
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* TODO: clickable images container - positioned precisely later */
 .interactive-area {
-  position: relative; /* TODO: position images precisely later */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* TODO: initially ignores mouse, enable later when needed */
 }
 
 .interactive-area img {
   position: absolute;
-  width: 100px; /* TODO Adjust accordingly */
+  width: 80px;
   cursor: pointer;
-  /* TODO: top: 50px; left: 100px; --> adjust for each animal precisely later */
+  pointer-events: auto; /* enables clicks on images */
 }
 
-footer {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9rem;
+/* actual footer is a form at bottom-right fixed position */
+.form-footer {
+  position: fixed; /* fixed to viewport */
+  bottom: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 8px;
+  width: 320px;
 }
 
-form {
-  margin-top: 30px;
-  background-color: rgba(255,255,255,0.1);
-  padding: 15px;
+.form-footer form {
+  width: 100%;
+}
+
+.form-footer input[type="email"],
+.form-footer button {
+  width: 100%;
+  padding: 6px;
+  margin-top: 5px;
   border-radius: 5px;
+  border: none;
+}
+
+.form-footer button {
+  cursor: pointer;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  transition: background 0.3s;
+}
+
+.form-footer button:hover {
+  background: rgba(255,255,255,0.4);
 }
