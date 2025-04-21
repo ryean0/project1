@@ -21,41 +21,65 @@
   <header>
     <h1>My Favorite Sea Creatures</h1>
     <!-- Light/Dark Mode Toggle Button -->
-    <button id="mode-toggle">Switch Mode</button>
+    <button id="mode-toggle">Toggle Dark/Light</button>
   </header>
 
   <!-- Main content structured into CSS Grid -->
   <main class="creature-grid">
-    <!-- Column 1: Blue Whale -->
+    <!-- col1: Whale -->
     <section class="creature-col">
-      <h2>1. Blue Whale <span id="whale-emoji"></span></h2>
-      <ul>
-        <li>🐋 There is only 1!</li>
-        <li><a href="https://en.wikipedia.org/wiki/Blue_whale" target="_blank">Learn More →</a></li>
-      </ul>
+      <ol class="creature-content">
+        <li>
+          <h2 class="creature-name"> 🐋 Blue Whale 🐋 <span id="whale-emoji"></span></h2>
+          <ul class="creature-facts">
+            <li>~ Hint: A single blue whale is hiding here ~</li>
+          </ul>
+        </li>
+        <li>
+          <p class="creature-description">Curious about the lives of Blue Whales?</p>
+          <a href="https://en.wikipedia.org/wiki/Blue_whale" target="_blank" class="creature-link">🐋 Click here to learn more 🐋</a>
+          <hr class="separator">
+        </li>
+      </ol>
     </section>
 
-    <!-- Column 2: Sea Turtles -->
+    <!-- col2: Sea Turtles -->
     <section class="creature-col">
-      <h2>2. Sea Turtles <span id="turtle-emoji"></span></h2>
-      <ul>
-        <li>🐢🐢 There are 2!</li>
-        <li><a href="https://en.wikipedia.org/wiki/Sea_turtle" target="_blank">Learn More →</a></li>
-      </ul>
+      <ol class="creature-content">
+        <li>
+          <h2 class="creature-name"> 🐢 Sea Turtles 🐢  <span id="turtle-emoji"></span></h2>
+          <ul class="creature-facts">
+            <li>~ Hint: Two sea turtles are hiding here ~</li>
+          </ul>
+        </li>
+        <li>
+          <p class="creature-description">Interested to find out more about Sea Turtles?</p>
+          <a href="https://en.wikipedia.org/wiki/Sea_turtle" target="_blank" class="creature-link">🐢 Click here to learn more 🐢</a>
+          <hr class="separator">
+        </li>
+      </ol>
     </section>
 
-    <!-- Column 3: Ocean Jellyfish -->
+    <!-- col3: Jellyfish (already correct) -->
     <section class="creature-col">
-      <h2>3. Ocean Jellyfish <span id="jellyfish-emoji"></span></h2>
-      <ul>
-        <li>🪼🪼 There are 2!</li>
-        <li><a href="https://en.wikipedia.org/wiki/Jellyfish" target="_blank">Learn More →</a></li>
-      </ul>
+      <ol class="creature-content">
+        <li>
+          <h2 class="creature-name"> 🪼 Jellyfish 🪼 <span id="jellyfish-emoji"></span></h2>
+          <ul class="creature-facts">
+            <li>~ Hint: Two jellyfish are hiding here ~</li>
+          </ul>
+        </li>
+        <li>
+          <p class="creature-description">Fascinated by Ocean Jellyfish?</p>
+          <a href="https://en.wikipedia.org/wiki/jellyfish" target="_blank" class="creature-link"> 🪼 Click here to learn more 🪼</a>
+          <hr class="separator">
+        </li>
+      </ol>
     </section>
 
     <!-- Footer text spanning grid columns -->
     <section class="grid-footer">
-      <p>See if you can spot them in this image!</p>
+      <p>See if you can spot all the creatures in this image! Click on them to find out!</p>
     </section>
   </main>
 
@@ -76,14 +100,6 @@
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-
-        <p>Would you like to receive future links for more puzzles?</p>
-
-        <input type="checkbox" id="yes" name="subscribe" value="yes">
-        <label for="yes">Yes, this is fun!</label><br>
-
-        <input type="checkbox" id="no" name="subscribe" value="no">
-        <label for="no">No, this is kinda lame.</label><br>
 
         <button type="submit">Submit</button>
       </fieldset>

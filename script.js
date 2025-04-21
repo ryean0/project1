@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const parent = document.querySelector(`#${animal}-emoji`).closest('.creature-col');
     const div = document.createElement('div');
     div.className = 'found-message';
-    div.textContent = `${found} have been found so far!`;
+    div.textContent = `${found} ${animal}s have been found so far!`;
     parent.appendChild(div);
     return div;
   }
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleAnimalClick(animalKey, imgElement) {
     const animal = animals[animalKey];
 
-    // Prevent repeated clicks on the same image
+    // no repeated clicks on the same image
     if (imgElement.dataset.found) {
       return; // already clicked, do nothing
     }
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update count message 
     if (animal.found === 1) {
-      animal.messageDiv.textContent = `1 has been found so far!`;
+      animal.messageDiv.textContent = `1/${animal.total} have been found so far!`;
     } else {
       animal.messageDiv.textContent = `${animal.found} have been found so far!`;
     }
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (animal.found === animal.total) {
       const congrats = document.createElement('div');
       congrats.className = 'congrats-message';
-      congrats.textContent = `🎉 Congratulations! You have found every one! 🎉`;
+      congrats.textContent = `🎉 Congrats! You found every ${animal}!`;
       animal.messageDiv.parentElement.appendChild(congrats);
     }
   }

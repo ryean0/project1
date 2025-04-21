@@ -12,22 +12,25 @@ html, body {
   overflow: hidden;
   font-family: 'Poppins', Arial, sans-serif;
   background: url('assets/desktop/dark-bg.png') no-repeat center center fixed;
-  background-size: cover; /* Always cover entire viewport */
+  background-size: cover; 
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   color: white;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   transition: background 0.5s ease; /* transition between dark/light */
 }
 
 /* header styling (takes minimal space at the top) */
-header {
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  color:rgb(130, 207, 255);
+  margin-bottom: 20px;
+  padding: 20px;
   text-align: center;
-  flex: 0 1 auto;
-  margin-bottom: 10px;
 }
 /* styles for dark mode switch */
 #mode-toggle {
@@ -64,7 +67,7 @@ header {
 /* Grid items styling */
 .creature-col {
   background: linear-gradient(to bottom right, rgba(0,0,50,0.6), rgba(0,0,80,0.3));
-  padding: 20px;
+  padding: 25px 20px 20px 30px; /* top, right, bottom, left */
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   transition: transform 0.3s ease;
@@ -75,11 +78,60 @@ header {
 }
 
 .creature-col h2::before {
-  content: "✨ ";
+  content: "";
 }
 
 .creature-col ul li::before {
-  content: "👉 ";
+  content: "";
+}
+
+.creature-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color:rgb(130, 196, 253); /* bright cyan */
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.creature-facts {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 12px;
+}
+
+.creature-facts li {
+  font-size: 1.1rem;
+  color: #e0f7fa; /* soft aqua */
+  margin-bottom: 5px;
+}
+
+.creature-description {
+  font-size: 1rem;
+  font-style: italic;
+  color: #cfd8dc; /* very light grey-blue */
+  margin-bottom: 8px;
+}
+
+.creature-link {
+  display: inline-block;
+  font-size: 1rem;
+  color: #82b1ff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 5px;
+  transition: color 0.3s ease;
+}
+
+.creature-link:hover {
+  color: #bbdefb;
+  text-decoration: underline;
+}
+
+.separator {
+  border: none;
+  height: 1px;
+  background: rgba(40, 228, 241, 0.3);
+  margin: 10px 0;
 }
 
 /* footer text for grid view, not overall */
@@ -104,10 +156,9 @@ header {
   position: absolute;
   width: 80px;
   cursor: pointer;
-  pointer-events: auto; /* enables clicks on images */
+  pointer-events: auto; 
 }
 
-/* clickable images container - positioned precisely */
 .interactive-area {
   position: absolute;
   top: 0;
@@ -120,7 +171,7 @@ header {
 /* clickable animal images precisely positioned using viewport units */
 .interactive-area img {
   position: absolute;
-  width: 120px; /* Adjust width as needed to match visual scale */
+  width: 120px; 
   cursor: pointer;
   pointer-events: auto; /* enable clicks */
 }
@@ -169,6 +220,7 @@ header {
 
 .form-footer form {
   width: 100%;
+  padding: 10px;
 }
 
 .form-footer input[type="email"],
